@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221227 10:45:30.650" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="c:\Users\jagadish.mandala\Desktop\SearchResource\tasks.robot">
+<test id="s1-t1" name="Get User Input" line="14">
+<kw name="UserInput">
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${filename}</arg>
+<arg>msg=Excel File is not available</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20221227 10:45:35.813" level="INFO" html="true">File '&lt;a href="file://C:\Users\jagadish.mandala\Desktop\SearchResource\Robocorp.xlsx"&gt;C:\Users\jagadish.mandala\Desktop\SearchResource\Robocorp.xlsx&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20221227 10:45:35.811" endtime="20221227 10:45:35.818"/>
+</kw>
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>${filename}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20221227 10:45:35.853" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001D2D4410F10&gt;</msg>
+<status status="PASS" starttime="20221227 10:45:35.819" endtime="20221227 10:45:35.854"/>
+</kw>
+<kw name="Add text input" library="RPA.Dialogs">
+<arg>Sheetname</arg>
+<arg>label=Please Enter Sheetname</arg>
+<tag>input</tag>
+<doc>Add a text input element</doc>
+<status status="PASS" starttime="20221227 10:45:35.855" endtime="20221227 10:45:35.856"/>
+</kw>
+<kw name="Show dialog" library="RPA.Dialogs">
+<var>${s}</var>
+<arg>Search Resource</arg>
+<arg>400</arg>
+<arg>700</arg>
+<arg>${True}</arg>
+<tag>dialog</tag>
+<doc>Create a new dialog with all the defined elements, and show
+it to the user. Does not block, but instead immediately returns
+a new ``Dialog`` instance.</doc>
+<msg timestamp="20221227 10:45:35.876" level="INFO">${s} = &lt;RPA.Dialogs.dialog.Dialog object at 0x000001D2D5573DC0&gt;</msg>
+<status status="PASS" starttime="20221227 10:45:35.857" endtime="20221227 10:45:35.877"/>
+</kw>
+<kw name="Wait dialog" library="RPA.Dialogs">
+<var>${Se}</var>
+<arg>${s}</arg>
+<tag>dialog</tag>
+<doc>Wait for a dialog to complete that has been created with the
+keyword ``Show dialog``.</doc>
+<msg timestamp="20221227 10:45:35.880" level="INFO">Protecting keyword: RPA.Dialogs.Wait dialog</msg>
+<msg timestamp="20221227 10:45:46.463" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221227 10:45:35.877" endtime="20221227 10:45:46.448"/>
+</kw>
+<kw name="Add text input" library="RPA.Dialogs">
+<arg>ResourceName</arg>
+<arg>label=Please Enter Resource Name</arg>
+<tag>input</tag>
+<doc>Add a text input element</doc>
+<status status="PASS" starttime="20221227 10:45:46.464" endtime="20221227 10:45:46.466"/>
+</kw>
+<kw name="Show dialog" library="RPA.Dialogs">
+<var>${s}</var>
+<arg>Search Resource</arg>
+<arg>400</arg>
+<arg>700</arg>
+<arg>${True}</arg>
+<tag>dialog</tag>
+<doc>Create a new dialog with all the defined elements, and show
+it to the user. Does not block, but instead immediately returns
+a new ``Dialog`` instance.</doc>
+<msg timestamp="20221227 10:45:46.524" level="INFO">${s} = &lt;RPA.Dialogs.dialog.Dialog object at 0x000001D2D5573DF0&gt;</msg>
+<status status="PASS" starttime="20221227 10:45:46.470" endtime="20221227 10:45:46.525"/>
+</kw>
+<kw name="Wait dialog" library="RPA.Dialogs">
+<var>${Re}</var>
+<arg>${s}</arg>
+<tag>dialog</tag>
+<doc>Wait for a dialog to complete that has been created with the
+keyword ``Show dialog``.</doc>
+<msg timestamp="20221227 10:45:46.529" level="INFO">Protecting keyword: RPA.Dialogs.Wait dialog</msg>
+<msg timestamp="20221227 10:45:53.809" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221227 10:45:46.528" endtime="20221227 10:45:53.808"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Re.ResourceName}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221227 10:45:53.810" level="INFO">Mandala Jagadish Babu</msg>
+<status status="PASS" starttime="20221227 10:45:53.809" endtime="20221227 10:45:53.810"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Se.Sheetname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221227 10:45:53.812" level="INFO">Sheet1</msg>
+<status status="PASS" starttime="20221227 10:45:53.811" endtime="20221227 10:45:53.812"/>
+</kw>
+<kw name="Delete Columns" library="RPA.Excel.Files">
+<arg>D</arg>
+<doc>Delete column or columns beginning from start column number/name to
+possible end column number/name.</doc>
+<status status="PASS" starttime="20221227 10:45:53.812" endtime="20221227 10:45:53.813"/>
+</kw>
+<kw name="Delete Columns" library="RPA.Excel.Files">
+<arg>D</arg>
+<doc>Delete column or columns beginning from start column number/name to
+possible end column number/name.</doc>
+<status status="PASS" starttime="20221227 10:45:53.814" endtime="20221227 10:45:53.816"/>
+</kw>
+<kw name="Delete Columns" library="RPA.Excel.Files">
+<arg>D</arg>
+<doc>Delete column or columns beginning from start column number/name to
+possible end column number/name.</doc>
+<status status="PASS" starttime="20221227 10:45:53.817" endtime="20221227 10:45:53.818"/>
+</kw>
+<kw name="Worksheet Exists" library="RPA.Excel.Files">
+<var>${worksheetfound}</var>
+<arg>${Se.Sheetname}</arg>
+<doc>Return True if worksheet with given name is in workbook.</doc>
+<msg timestamp="20221227 10:45:53.819" level="INFO">${worksheetfound} = True</msg>
+<status status="PASS" starttime="20221227 10:45:53.818" endtime="20221227 10:45:53.819"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Se.Sheetname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221227 10:45:53.821" level="INFO">Sheet1</msg>
+<status status="PASS" starttime="20221227 10:45:53.820" endtime="20221227 10:45:53.821"/>
+</kw>
+<if>
+<branch type="IF" condition="${worksheetfound} == ${False}">
+<kw name="Error">
+<status status="NOT RUN" starttime="20221227 10:45:53.822" endtime="20221227 10:45:53.822"/>
+</kw>
+<status status="NOT RUN" starttime="20221227 10:45:53.821" endtime="20221227 10:45:53.825"/>
+</branch>
+<branch type="ELSE">
+<kw name="Read Worksheet As Table" library="RPA.Excel.Files">
+<var>${table}</var>
+<arg>${Se.Sheetname}</arg>
+<arg>header=True</arg>
+<doc>Read the contents of a worksheet into a Table container. Allows
+sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
+<msg timestamp="20221227 10:45:53.829" level="INFO">Created table: Table(columns=['S.No', 'ResourceName', 'Email Id', 'Install &amp; Configure(VS Code, Robocorp Extenstions etc)', 'Level 1 Certification', 'Level 2 Certification', 'Level 3 Certification', 'AutomationOps Analyst Certification', 'Python Certification'], rows=31)</msg>
+<msg timestamp="20221227 10:45:53.829" level="INFO">${table} = Table(columns=['S.No', 'ResourceName', 'Email Id', 'Install &amp; Configure(VS Code, Robocorp Extenstions etc)', 'Level 1 Certification', 'Level 2 Certification', 'Level 3 Certification', 'AutomationOps A...</msg>
+<status status="PASS" starttime="20221227 10:45:53.826" endtime="20221227 10:45:53.830"/>
+</kw>
+<kw name="Filter Table By Column" library="RPA.Tables">
+<arg>${table}</arg>
+<arg>ResourceName</arg>
+<arg>==</arg>
+<arg>${Re.ResourceName}</arg>
+<doc>Remove all rows where column values don't match the
+given condition.</doc>
+<msg timestamp="20221227 10:45:53.831" level="INFO">Filtered -30 rows</msg>
+<status status="PASS" starttime="20221227 10:45:53.830" endtime="20221227 10:45:53.832"/>
+</kw>
+<kw name="Get Table Cell" library="RPA.Tables">
+<var>${Value}</var>
+<arg>${table}</arg>
+<arg>0</arg>
+<arg>0</arg>
+<doc>Get a cell value from a table.</doc>
+<msg timestamp="20221227 10:45:53.833" level="INFO">${Value} = 23</msg>
+<status status="PASS" starttime="20221227 10:45:53.832" endtime="20221227 10:45:53.833"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221227 10:45:53.834" level="INFO">23</msg>
+<status status="PASS" starttime="20221227 10:45:53.833" endtime="20221227 10:45:53.834"/>
+</kw>
+<kw name="Write table to CSV" library="RPA.Tables">
+<arg>${table}</arg>
+<arg>Output.CSV</arg>
+<doc>Write a table as a CSV file.</doc>
+<status status="PASS" starttime="20221227 10:45:53.834" endtime="20221227 10:45:53.846"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{table}</value>
+<iter>
+<var name="${element}">{'S.No': 23, 'ResourceName': 'Mandala Jagadish Babu', 'Email Id': 'jagadish.mandala@yash.com', 'Install &amp; Configure(VS Code, Robocorp Extenstions etc)': 'Completed', 'Level 1 Certification': 'Complete...</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221227 10:45:53.880" level="INFO">{'S.No': 23, 'ResourceName': 'Mandala Jagadish Babu', 'Email Id': 'jagadish.mandala@yash.com', 'Install &amp; Configure(VS Code, Robocorp Extenstions etc)': 'Completed', 'Level 1 Certification': 'Completed', 'Level 2 Certification': 'Completed', 'Level 3 Certification': 'Completed', 'AutomationOps Analyst Certification': 'Completed', 'Python Certification': 'Completed'}</msg>
+<status status="PASS" starttime="20221227 10:45:53.872" endtime="20221227 10:45:53.883"/>
+</kw>
+<status status="PASS" starttime="20221227 10:45:53.868" endtime="20221227 10:45:53.886"/>
+</iter>
+<status status="PASS" starttime="20221227 10:45:53.862" endtime="20221227 10:45:53.887"/>
+</for>
+<kw name="Close Workbook" library="RPA.Excel.Files">
+<doc>Close the active workbook.</doc>
+<msg timestamp="20221227 10:45:53.896" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001D2D4410F10&gt;</msg>
+<status status="PASS" starttime="20221227 10:45:53.889" endtime="20221227 10:45:53.899"/>
+</kw>
+<status status="PASS" starttime="20221227 10:45:53.825" endtime="20221227 10:45:53.912"/>
+</branch>
+<status status="PASS" starttime="20221227 10:45:53.821" endtime="20221227 10:45:53.913"/>
+</if>
+<status status="PASS" starttime="20221227 10:45:35.810" endtime="20221227 10:45:53.915"/>
+</kw>
+<status status="PASS" starttime="20221227 10:45:35.809" endtime="20221227 10:45:53.919"/>
+</test>
+<doc>Search Resource Data/Status based on user Input</doc>
+<status status="PASS" starttime="20221227 10:45:30.680" endtime="20221227 10:45:53.935"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221227 10:45:34.650" level="WARN">This is a deprecated import that will be removed in favor of RPA.Robocorp.WorkItems</msg>
+<msg timestamp="20221227 10:45:35.656" level="WARN">This is a deprecated import that will be removed in favor of RPA.Browser.Selenium</msg>
+<msg timestamp="20221227 10:45:35.807" level="WARN">No input work items file found: None</msg>
+</errors>
+</robot>
